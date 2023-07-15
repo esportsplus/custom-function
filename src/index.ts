@@ -1,9 +1,9 @@
 let { setPrototypeOf } = Object;
 
 
-const CustomFunction = (function <T extends Function>(fn: T): T {
+const CustomFunction = function <T extends Function>(fn: T): T {
     return setPrototypeOf(fn, new.target.prototype);
-});
+};
 
 CustomFunction.prototype = Function.prototype;
 
